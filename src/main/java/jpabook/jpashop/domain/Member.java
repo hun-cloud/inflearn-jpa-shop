@@ -13,6 +13,7 @@ public class Member extends BaseEntity{
     private String street;
     private String zipCode;
 
+
     public Long getId() {
         return id;
     }
