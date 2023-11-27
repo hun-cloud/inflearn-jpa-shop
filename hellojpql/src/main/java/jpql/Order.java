@@ -1,11 +1,9 @@
 package jpql;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "ORDERS")
 public class Order {
 
     @Id @GeneratedValue
@@ -14,6 +12,10 @@ public class Order {
 
     @Embedded
     private Address address;
+
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
+    private Product product;
 
     public Long getId() {
         return id;
